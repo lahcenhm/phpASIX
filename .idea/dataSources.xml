@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="phpasix@localhost" uuid="1cf5c143-d0d0-489f-ba45-83ec13e700ae">
+    <data-source source="LOCAL" name="phpASIX@localhost" uuid="d5b43d8d-f55a-4f63-9812-3cfed086b6aa">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/phpasix</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/phpASIX</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
