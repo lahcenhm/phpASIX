@@ -72,5 +72,4 @@ class Book {
         $statement->bindValue(':id', $id);
         $statement->execute();
     }
-
 }

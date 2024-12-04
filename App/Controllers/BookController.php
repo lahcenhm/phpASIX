@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
+
 use App\Models\Book;
+
 class BookController {
 
     public function index() {
@@ -26,9 +28,20 @@ class BookController {
         header('Location: /books');
     }
 
+    public function show($id) {
+        $book = (new Book)->find($id);
+
+        if (!$book) {
+            header('Location: /books');
+            exit();
+        }
+
+        require '../resources/views/books/show.blade.php';
+    }
+
     public function edit($id) {
-        $book = (new \App\Models\Book)->find($id);
-        if(!$book) {
+        $book = (new Book)->find($id);
+        if (!$book) {
             header('Location: /books');
             exit();
         }
@@ -36,8 +49,8 @@ class BookController {
     }
 
     public function update($id) {
-        $book = (new \App\Models\Book)->find($id);
-        if(!$book) {
+        $book = (new Book)->find($id);
+        if (!$book) {
             header('Location: /books');
             exit();
         }
@@ -53,17 +66,17 @@ class BookController {
             header('Location: /books');
             exit();
         }
-        $book = (new \App\Models\Book)->find($id);
+        $book = (new Book)->find($id);
         return require '../resources/views/books/delete.blade.php';
     }
 
     public function destroy($id) {
-        (new \App\Models\Book)->delete($id);
+        (new Book)->delete($id);
         header('Location: /books');
     }
 
     public function confirmDelete($id) {
-        $book = (new \App\Models\Book)->find($id);
+        $book = (new Book)->find($id);
         return require '../resources/views/books/delete.blade.php';
     }
 }

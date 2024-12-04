@@ -49,7 +49,6 @@ class Nba {
         }
     }
 
-
     public static function all() {
         $db = App::get('database')->getConnection();
         $statement = $db->prepare('SELECT * FROM ' . static::$table);
@@ -76,5 +75,9 @@ class Nba {
         $statement = $db->prepare('DELETE FROM ' . static::$table . ' WHERE id = :id');
         $statement->bindValue(':id', $id);
         $statement->execute();
+    }
+
+    public function show($id) {
+        return $this->find($id);
     }
 }

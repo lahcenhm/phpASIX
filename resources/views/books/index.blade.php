@@ -34,7 +34,7 @@
     <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-6">
         <h1 class="text-3xl font-bold text-center mb-6">Llista de llibres</h1>
         <div class="mb-4 text-right">
-            <a href="/books/create" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Crear Llibre</a>
+            <a href="/books/create" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"><Cr></Cr>ear Llibre</a>
         </div>
         <div class="overflow-x-auto">
             <table class="min-w-full table-auto">
@@ -53,8 +53,9 @@
                     <td class="px-4 py-2"><?= $book->author; ?></td>
                     <td class="px-4 py-2"><?= $book->releaseYear; ?></td>
                     <td class="px-4 py-2">
-                        <a href="/books/edit/<?= $book->id ?>" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700">Editar</a>
+                        <a href="/books/edit/<?= $book->id ?>" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700 ml-2">Editar</a>
                         <a href="/books/confirm-delete/<?= $book->id ?>" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 ml-2">Eliminar</a>
+                        <a href="/books/show/<?= $book->id ?>" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">Show</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

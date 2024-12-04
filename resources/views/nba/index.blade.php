@@ -51,13 +51,15 @@
                 <tbody>
                 <?php foreach ($nba as $jugador): ?>
                 <tr class="border-b">
-                    <td class="px-4 py-2"><?= $jugador->nombre ?></td>
-                    <td class="px-4 py-2"><?= $jugador->equipo ?></td>
-                    <td class="px-4 py-2"><?= $jugador->fecha_debut ?></td>
-                    <td class="px-4 py-2"><?= $jugador->anillos_ganados ?></td>
+                    <td class="px-4 py-2"><?= htmlspecialchars($jugador->nombre) ?></td>
+                    <td class="px-4 py-2"><?= htmlspecialchars($jugador->equipo) ?></td>
+                    <td class="px-4 py-2"><?= htmlspecialchars($jugador->fecha_debut) ?></td>
+                    <td class="px-4 py-2"><?= htmlspecialchars($jugador->anillos_ganados) ?></td>
                     <td class="px-4 py-2">
-                        <a href="/nba/edit/<?= $jugador->id ?>" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700">Editar</a>
+                        <!-- Botón Ver Detalles -->
+                        <a href="/nba/edit/<?= $jugador->id ?>" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700 ml-2">Editar</a>
                         <a href="/nba/confirm-delete/<?= $jugador->id ?>" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 ml-2">Eliminar</a>
+                        <a href="/nba/show/<?= $jugador->id ?>" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">Show</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
